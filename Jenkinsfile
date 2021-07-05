@@ -8,7 +8,7 @@ pipeline {
 //                    sh 'packer build fundingsocieties-base-amz-lnx2-with-consul.json'
 //                    sh 'packer build fundingsocieties-base-amz-lnx2.json'
                      sh """
-                     ami_id=($(cat manifest.json | jq .builds[0].artifact_id | tr -d '\"' | cut -b 16-))
+                     ami_id=($(cat manifest.json | jq .builds[0].artifact_id | tr -d \" | cut -b 16-))
                      """
          
 
